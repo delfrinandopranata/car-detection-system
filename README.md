@@ -1,6 +1,6 @@
 # Car Detection and Classification System
 
-A comprehensive deep learning system for detecting and classifying Indonesian car types in images and videos. Built with PyTorch, featuring custom-built neural network architectures including YOLO-based object detection and multiple classification models (CNN and Transformer-based).
+A comprehensive deep learning system for detecting and classifying Indonesian car types in images and videos. Built with PyTorch, featuring custom-built neural network architectures including YOLO-based object detection and multiple classification models (CNN- and Transformer-based).
 
 ![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
 ![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-red.svg)
@@ -10,27 +10,26 @@ A comprehensive deep learning system for detecting and classifying Indonesian ca
 
 ## Table of Contents
 
-- Overview  
-- Features  
-- Project Structure  
-- Installation  
-- Quick Start  
-- Usage  
-  - Training  
-  - Inference  
-  - Evaluation  
-- Model Architectures  
-  - Object Detection  
-  - Classification  
-- Dataset Preparation  
-- Configuration  
-- API Reference  
-- Examples  
-- Performance  
-- Troubleshooting  
-- Contributing  
-- License  
-- Contact  
+- [Overview](#overview)
+- [Features](#features)
+- [Project Structure](#project-structure)
+- [Installation](#installation)
+- [Quick Start](#quick-start)
+- [Usage](#usage)
+  - [Training](#training)
+  - [Inference](#inference)
+  - [Evaluation](#evaluation)
+- [Model Architectures](#model-architectures)
+  - [Object Detection](#object-detection)
+  - [Classification](#classification)
+- [Dataset Preparation](#dataset-preparation)
+- [Configuration](#configuration)
+- [API Reference](#api-reference)
+- [Performance](#performance)
+- [Troubleshooting](#troubleshooting)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
 ---
 
@@ -43,14 +42,14 @@ This project implements a complete deep learning pipeline for vehicle understand
 
 ### Supported Car Types (Indonesian Market Focus)
 
-| Type | Examples |
-|------|----------|
-| Sedan | Toyota Vios, Honda City, Toyota Camry |
-| SUV | Toyota Fortuner, Mitsubishi Pajero, Honda CR-V |
-| MPV | Toyota Avanza, Mitsubishi Xpander, Honda Mobilio |
+| Type        | Examples |
+|------------|----------|
+| Sedan      | Toyota Vios, Honda City, Toyota Camry |
+| SUV        | Toyota Fortuner, Mitsubishi Pajero, Honda CR-V |
+| MPV        | Toyota Avanza, Mitsubishi Xpander, Honda Mobilio |
 | Hatchback | Honda Jazz, Toyota Yaris, Suzuki Baleno |
-| Pickup | Toyota Hilux, Mitsubishi Triton, Isuzu D-Max |
-| Minivan | Toyota HiAce, Daihatsu Gran Max |
+| Pickup    | Toyota Hilux, Mitsubishi Triton, Isuzu D-Max |
+| Minivan   | Toyota HiAce, Daihatsu Gran Max |
 | Crossover | Honda HR-V, Toyota C-HR, Mazda CX-3 |
 
 ---
@@ -61,7 +60,7 @@ This project implements a complete deep learning pipeline for vehicle understand
 
 - Multi-scale object detection for varied vehicle sizes  
 - Seven-class car type classification  
-- Video and image inference support  
+- Image and video inference support  
 - Batch processing for large datasets  
 
 ### Technical Highlights
@@ -86,7 +85,7 @@ This project implements a complete deep learning pipeline for vehicle understand
 ## Project Structure
 
 ```text
-car_detection_system/
+car-detection-system/
 │
 ├── main.py                  # Unified CLI entry point
 ├── train.py                 # Training pipelines
@@ -109,7 +108,7 @@ car_detection_system/
 ├── data/                    # Datasets
 ├── outputs/                 # Inference results
 └── notebooks/               # Experiments and analysis
-````
+```
 
 ---
 
@@ -191,6 +190,14 @@ python main.py train \
   --img-size 640
 ```
 
+### Inference
+
+Use `main.py infer` to process images or videos with trained models.
+
+### Evaluation
+
+Evaluation metrics include accuracy, F1-score, confusion matrix (classification), and mAP@0.5 (detection).
+
 ---
 
 ## Model Architectures
@@ -248,8 +255,6 @@ All configuration parameters are defined in `configs/config.yaml`, covering:
 
 ## API Reference
 
-### Inference System
-
 ```python
 from inference import CarRetrievalSystem
 
@@ -281,8 +286,8 @@ system.process_video("input.mp4", "output.mp4")
 
 ## Troubleshooting
 
-* Reduce batch size for GPU memory issues
-* Enable mixed precision training
+* Reduce batch size for GPU memory constraints
+* Enable mixed-precision training
 * Increase dataset diversity for improved accuracy
 
 ---
@@ -306,3 +311,4 @@ This project is licensed under the MIT License.
 
 **Delfrinando Pranata**
 Email: [delfrinando@gmail.com](mailto:delfrinando@gmail.com)
+Phone: +60172926313
