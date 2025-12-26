@@ -73,24 +73,10 @@ venv.bak/
 .python-version
 
 # Data & Models
-data/
-checkpoints/
-outputs/
 *.pth
 *.pt
 *.onnx
 *.weights
-
-# Videos & Images
-*.mp4
-*.avi
-*.mov
-*.mkv
-*.jpg
-*.jpeg
-*.png
-*.gif
-!README_images/
 
 # Logs
 *.log
