@@ -1,0 +1,101 @@
+# Car Detection and Classification System Configuration
+
+# Dataset Configuration
+dataset:
+  car_types:
+    - sedan
+    - suv
+    - mpv
+    - hatchback
+    - pickup
+    - minivan
+    - crossover
+  
+  # Indonesian specific car brands/models to focus on
+  indonesian_cars:
+    - Toyota Avanza
+    - Toyota Innova
+    - Honda Jazz
+    - Honda HR-V
+    - Honda CR-V
+    - Mitsubishi Xpander
+    - Daihatsu Xenia
+    - Suzuki Ertiga
+    - Toyota Rush
+    - Daihatsu Terios
+    - Toyota Fortuner
+    - Mitsubishi Pajero Sport
+    - Toyota Camry
+    - Honda Civic
+    - Honda City
+
+# Object Detection Configuration
+detection:
+  model: yolov8  # Options: yolov8, detr
+  backbone: csp-darknet  # For YOLO
+  input_size: 640
+  conf_threshold: 0.25
+  iou_threshold: 0.45
+  max_detections: 100
+
+# Classifier Configuration  
+classifier:
+  models:
+    - name: resnet50
+      type: cnn
+      pretrained: true
+    - name: efficientnet_b0
+      type: cnn
+      pretrained: true
+    - name: vit_base_patch16_224
+      type: transformer
+      pretrained: true
+    - name: swin_tiny_patch4_window7_224
+      type: transformer
+      pretrained: true
+  
+  input_size: 224
+  num_classes: 7
+
+# Training Configuration
+training:
+  detection:
+    epochs: 100
+    batch_size: 16
+    learning_rate: 0.01
+    optimizer: SGD
+    weight_decay: 0.0005
+    momentum: 0.937
+    
+  classifier:
+    epochs: 50
+    batch_size: 32
+    learning_rate: 0.001
+    optimizer: AdamW
+    weight_decay: 0.01
+    scheduler: cosine
+    warmup_epochs: 5
+
+# Augmentation Configuration
+augmentation:
+  train:
+    horizontal_flip: 0.5
+    vertical_flip: 0.0
+    rotation: 15
+    scale: [0.8, 1.2]
+    brightness: 0.2
+    contrast: 0.2
+    saturation: 0.2
+    hue: 0.1
+    mosaic: 0.5
+    mixup: 0.1
+    
+  val:
+    resize_only: true
+
+# Paths
+paths:
+  data_dir: ./data
+  checkpoint_dir: ./checkpoints
+  output_dir: ./outputs
+  log_dir: ./logs
