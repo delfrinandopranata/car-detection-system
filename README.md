@@ -145,20 +145,26 @@ pip install -r requirements.txt
 
 ## Quick Start
 
-### Run Demo
-
+### Option 1: Run Demo
 ```bash
 python main.py demo
 ```
 
-### Video Inference (YOLOv8)
-
+### Option 2: Process a Video (Using Pre-trained YOLOv8)
 ```bash
 python main.py infer \
   --input ./test-assets/traffic_test.mp4 \
   --output ./test-output/traffic_test.mp4 \
-  --use-ultralytics \
-  --conf 0.25
+    --use-ultralytics \
+    --conf 0.25
+```
+
+### Option 3: Process Local Image
+```bash
+python main.py infer \
+  --input ./test-assets/car-image.png \
+  --output ./test-output/car-image.png \
+    --use-ultralytics
 ```
 
 ---
