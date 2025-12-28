@@ -300,6 +300,6 @@ system.process_video("input.mp4", "output.mp4")
 
 ## Contact
 
-**Delfrinando Pranata**
-Email: [delfrinando@gmail.com](mailto:delfrinando@gmail.com)
+**Delfrinando Pranata**  
+Email: [delfrinando@gmail.com](mailto:delfrinando@gmail.com)  
 Phone: +60172926313
